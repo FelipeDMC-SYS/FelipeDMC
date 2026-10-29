@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#154f45"><meta name="description" content="Lee colindancias en imágenes de planos y documentos. Revisa los tramos de cada viento y copia la descripción con el formato que necesitas.">
+  <title>Colindantes — colindancias y coordenadas</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg"><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./polish.css">
+  <link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Colindantes"><meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+<svg class="icon-library" aria-hidden="true"><defs>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Zm7-2v4m-2-2h4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9Zm0 0v6h6M8 14h8m-8 4h6"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v2"/></symbol>
+</defs></svg>
+<header class="site-header">
+  <a class="brand" href="./" aria-label="Colindantes, inicio"><img class="brand-mark" src="./assets/icon.svg" width="41" height="41" alt=""><span>colindantes<span class="brand-dot">.</span></span></a>
+  <div class="header-right"><span class="local-badge"><span></span> Lectura en tu dispositivo</span><button class="install-button" id="installBtn" aria-label="Instalar Colindantes"><svg><use href="#i-download"/></svg><span>Instalar app</span></button><button class="help-btn" id="helpBtn"><svg><use href="#i-info"/></svg><span>Cómo funciona</span></button></div>
+</header>
+<main>
+  <nav class="tool-nav" aria-label="Herramientas"><a href="./" aria-current="page">Colindantes <span>Vientos y medidas</span></a><a href="./coordenadas.html">Coordenadas <span>Imagen a TXT</span><b>NUEVO</b></a></nav>
+  <section class="intro">
+    <div><div class="eyebrow"><span class="little-line"></span> TU ASISTENTE DE COLINDANCIAS</div><h1>Del plano al texto.<br><em>Así de claro.</em></h1><p>Sube una imagen, revisa cada viento y obtén<br class="desktop-br"> la descripción lista para tu documento.</p></div>
+    <div class="intro-art" aria-hidden="true"><span class="art-north">N</span><svg viewBox="0 0 280 150"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0v20" fill="none" stroke="#d7ddd3" stroke-width=".6"/></pattern></defs><rect width="280" height="150" fill="url(#grid)"/><path d="m75 31 103-11 35 58-49 48-109-34Z" fill="#dbe8dd" fill-opacity=".65" stroke="#276656" stroke-width="1.5"/><path d="m75 31 89 95m14-106-123 72" fill="none" stroke="#276656" stroke-dasharray="4 5" opacity=".4"/><g fill="#fafbf7" stroke="#276656" stroke-width="1.5"><circle cx="75" cy="31" r="3.5"/><circle cx="178" cy="20" r="3.5"/><circle cx="213" cy="78" r="3.5"/><circle cx="164" cy="126" r="3.5"/><circle cx="55" cy="92" r="3.5"/></g><text x="115" y="77" fill="#276656" font-size="13" font-family="monospace">N · E · S · O</text></svg><span class="art-caption">CADA LÍMITE, EN SU LUGAR.</span></div>
+  </section>
+  <div class="workflow"><span class="active"><b>01</b> Carga tu imagen</span><i></i><span><b>02</b> Revisa los tramos</span><i></i><span><b>03</b> Copia el resultado</span><span class="workflow-note">Sin registros. Sin complicaciones.</span></div>
+  <div class="workspace">
+    <section class="panel source-panel" aria-labelledby="sourceTitle">
+      <div class="panel-title"><div><span class="step-num">01</span><h2 id="sourceTitle">Tu documento</h2></div><span id="sourceBadge" class="badge">EJEMPLO</span></div>
+      <div class="source-tabs" role="tablist" aria-label="Tipo de fuente"><button class="active" id="imageTab" role="tab" aria-selected="true">Imagen</button><button id="textTab" role="tab" aria-selected="false">Pegar texto</button></div>
+      <div id="imageSource">
+        <div id="dropzone" class="dropzone">
+          <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp,image/bmp" hidden>
+          <button class="upload-button" id="uploadBtn"><svg><use href="#i-upload"/></svg><span><strong>Subir una imagen</strong><small>o arrástrala aquí · PNG, JPG, WEBP · hasta 20 MB</small></span><span class="upload-plus">+</span></button>
+          <div class="image-stage" id="imageStage"><img id="preview" src="./assets/ejemplo.png" alt="Plano de ejemplo con medidas y colindantes en cada viento"><div class="scan-line" aria-hidden="true"></div><span class="preview-caption" id="previewCaption">VISTA DE EJEMPLO</span></div>
+        </div>
+        <div class="image-toolbar"><span id="fileName">plano-de-ejemplo.png</span><div><button class="icon-button" id="zoomOut" aria-label="Alejar imagen">−</button><span id="zoomLabel">100%</span><button class="icon-button" id="zoomIn" aria-label="Acercar imagen">+</button><span class="toolbar-divider"></span><button class="icon-button" id="rotateBtn" aria-label="Girar imagen 90 grados"><svg><use href="#i-rotate"/></svg></button></div></div>
+        <div class="read-options"><label for="readMode">Tipo de imagen</label><select id="readMode"><option value="plan">Plano o captura de CAD</option><option value="document">Documento o fotografía</option></select></div>
+      </div>
+      <div id="textSource" hidden><label for="sourceText" class="field-label">Texto del plano o documento</label><textarea id="sourceText" placeholder="Pega aquí las medidas y los colindantes…&#10;&#10;Al norte: en 68.87 metros con Margarita López Soltero."></textarea><p class="subtle">También puedes pegar texto obtenido de un PDF o una escritura.</p></div>
+      <div class="analysis-wrap"><button id="analyzeBtn" class="primary-button"><svg><use href="#i-spark"/></svg><span>Analizar imagen</span><svg class="button-arrow"><use href="#i-arrow"/></svg></button><button id="cancelBtn" class="text-button" hidden>Cancelar lectura</button><div class="progress-track" id="progressTrack" hidden><div id="progressFill"></div></div><p id="analysisStatus" class="analysis-status" aria-live="polite">La lectura es local. Tu imagen no se envía a un servidor.</p></div>
+      <div class="source-note"><svg><use href="#i-info"/></svg><span>Funciona con texto legible en planos, capturas y documentos. Reconoce vientos cardinales y diagonales en cualquier posición.</span></div>
+      <button id="demoBtn" class="text-button demo-button">Probar con el ejemplo <span>↗</span></button>
+    </section>
+    <section class="panel result-panel" aria-labelledby="resultTitle">
+      <div class="panel-title"><div><span class="step-num">02</span><h2 id="resultTitle">Tus colindantes</h2></div><span class="result-count" id="windCount">4 vientos</span></div>
+      <div class="result-tabs" role="tablist" aria-label="Vista de resultados"><button id="resultTab" class="active" role="tab" aria-selected="true">Descripción</button><button id="reviewTab" role="tab" aria-selected="false">Revisar tramos <span id="rowCount">5</span></button></div>
+      <div class="review-notice" id="reviewNotice"><svg><use href="#i-info"/></svg><p id="noticeText">Resultado de ejemplo. Sube tu imagen para obtener tus colindantes.</p></div>
+      <div id="descriptionView">
+        <div class="format-row"><span class="field-label">Formato del texto</span><div class="case-switch" role="group" aria-label="Mayúsculas y minúsculas"><button data-case="normal" class="active" aria-pressed="true" title="Encabezados en mayúsculas y nombres con inicial mayúscula">Aa</button><button data-case="upper" aria-pressed="false" title="Todo en mayúsculas">AA</button><button data-case="lower" aria-pressed="false" title="Todo en minúsculas">aa</button></div></div>
+        <div class="output-paper" id="outputPaper"><div id="formattedOutput" aria-live="polite"></div><div class="paper-footer"><span>DESCRIPCIÓN DE COLINDANCIAS</span><span id="characterCount"></span></div></div>
+        <div class="output-options"><label><span>Presentación</span><select id="separator"><option value="lines">Un viento por línea</option><option value="paragraph">Un solo párrafo</option></select></label><label><span>Decimales</span><select id="precision"><option value="original">Conservar los de origen</option><option value="two">Siempre dos decimales</option></select></label></div>
+        <div class="result-actions"><button id="copyBtn" class="primary-button"><svg><use href="#i-copy"/></svg><span>Copiar descripción</span></button><button id="downloadBtn" class="secondary-button" title="Descargar texto"><svg><use href="#i-download"/></svg><span>.TXT</span></button></div>
+      </div>
+      <div id="reviewView" hidden><p class="review-help">Compara con tu imagen. Corrige los datos y marca cada tramo como revisado.</p><div id="rowsEditor"></div><button id="addRowBtn" class="secondary-button add-row"><svg><use href="#i-plus"/></svg>Agregar tramo</button><div class="review-bottom"><span id="reviewProgress">0 de 5 revisados</span><button id="reviewAllBtn" class="text-button">Marcar todos como revisados</button></div></div>
+      <div id="unresolvedBox" class="unresolved-box" hidden><strong>Texto que necesita revisión</strong><p id="unresolvedText"></p><button class="text-button" id="resolveBtn">Completar en Revisar tramos →</button></div>
+      <details class="raw-details"><summary>Ver texto detectado</summary><textarea id="rawText" readonly aria-label="Texto detectado por OCR" placeholder="El texto completo aparecerá después de analizar la imagen."></textarea><button id="useRawBtn" class="text-button">Editar este texto y volver a analizar →</button></details>
+    </section>
+  </div>
+  <div class="bottom-notes"><div><span class="note-icon">↗</span><div><strong>Varios tramos, una descripción</strong><p>Respeta los vientos escritos y su orden de aparición.</p></div></div><div><span class="note-icon">Aa</span><div><strong>El formato lo eliges tú</strong><p>Mayúsculas, minúsculas o formato habitual.</p></div></div><div><span class="note-icon">✓</span><div><strong>La última revisión es tuya</strong><p>Comprueba las medidas y los nombres originales.</p></div></div></div>
+</main>
+<footer class="site-footer">
+  <div class="footer-product"><span class="footer-brand">colindantes.</span><span>Del plano al texto.</span></div>
+  <div class="creator-signature" aria-label="Creado por FelipeDMC">
+    <img class="creator-logo" src="./assets/felipedmc-logo.png" width="112" height="112" alt="Logo de FelipeDMC" decoding="async">
+    <div class="creator-credit"><span class="creator-label">CREADO POR</span><strong>FelipeDMC</strong><span class="creator-role">Diseño y desarrollo</span></div>
+  </div>
+</footer>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="helpDialog"><div class="dialog-header"><h2>Del plano al texto, en 3 pasos</h2><button id="closeHelp" class="icon-button" aria-label="Cerrar ayuda">×</button></div><ol><li><strong>Sube una imagen legible.</strong> Puede ser un plano, una captura o la fotografía de un documento. Gírala si el texto está de lado.</li><li><strong>Analiza y revisa.</strong> La lectura OCR busca vientos, medidas en metros y colindantes. Puedes corregir o agregar cualquier tramo.</li><li><strong>Elige el formato y copia.</strong> Conserva el orden de aparición y admite norte, sur, oriente, poniente, noreste, sureste, suroeste y noroeste. Los tramos de un mismo viento se unen en una sola descripción. También puedes descargar un TXT.</li></ol><div class="help-note">Esta versión lee texto impreso; no interpreta por sí sola la geometría de un plano sin vientos, ni garantiza la lectura de manuscritos. No calcula ni inventa medidas. La ortografía y los acentos se conservan como se lean: revísalos en el original.</div><p>El motor de lectura se descarga desde este sitio la primera vez. Las imágenes se procesan en tu dispositivo y se eliminan de la sesión al recargar.</p></dialog>
+<script type="module" src="./app.mjs"></script>
+<dialog class="install-dialog" id="installDialog"><div class="install-title"><h2>Colindantes, a un toque</h2><button class="icon-button" id="closeInstall" aria-label="Cerrar">×</button></div><div class="install-preview"><img src="./assets/icon-192.png" alt="Icono de Colindantes"><div><strong>Colindantes</strong><small>by FelipeDMC · Colindancias y coordenadas</small></div></div><ol><li><strong>Android:</strong> abre el menú de Chrome y toca «Instalar aplicación» o «Agregar a la pantalla principal».</li><li><strong>iPhone o iPad:</strong> abre este sitio en Safari, toca Compartir y luego «Agregar a la pantalla de inicio».</li><li><strong>Computadora:</strong> busca la opción de instalar en la barra de direcciones o en el menú del navegador.</li></ol><p>Si ya habías instalado un acceso directo con otro icono, elimínalo y vuelve a añadirlo desde esta versión.</p></dialog>
+<script type="module" src="./pwa.mjs"></script>
+</body>
+</html>
